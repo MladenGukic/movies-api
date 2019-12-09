@@ -46,7 +46,6 @@ class MovieController extends Controller
     public function store(MovieRequest $request)
     {
         $data = $request->all();
-
         return Movie::create($data);
     }
 

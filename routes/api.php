@@ -15,8 +15,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::resource('/movies', 'MovieController');
+Route::post('/login', 'Auth\LoginController@authenticate');
+Route::middleware('jwt')->resource('/movies', 'MovieController');
 
 
 

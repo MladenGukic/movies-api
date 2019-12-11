@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('/login', 'Auth\LoginController@authenticate');
 Route::post('/register', 'Auth\RegisterController@create');
-Route::resource('/movies', 'MovieController');
+Route::middleware('jwt')->resource('/movies', 'MovieController');
 
 
 
